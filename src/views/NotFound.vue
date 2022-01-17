@@ -1,15 +1,17 @@
 <template>
-    <div class="not-found">
-        <MessageCard title="Aïe..." subtitle="Vous vous êtes peut être perdu ?" />
-    </div>
+  <div class="not-found">
+    <MessageCard
+      title="Aïe..."
+      subtitle="Vous vous êtes peut être perdu ?" />
+  </div>
 </template>
 
 <script>
 import MessageCard from "@/components/ui/MessageCard.vue"
 
 export default {
-    name: "NotFound",
-    components: {MessageCard}
+  name: "NotFound",
+  components: { MessageCard }
 }
 </script>
 

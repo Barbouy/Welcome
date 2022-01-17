@@ -1,12 +1,12 @@
 <template>
-    <div class="welcome-card">
-        <span class="title">
-            Bienvenue !
-        </span>
-        <span class="subtitle">
-            Le site est en cours de construction...
-        </span>
-    </div>
+  <div class="welcome-card">
+    <span class="title">
+      Bienvenue !
+    </span>
+    <span class="subtitle">
+      Le site est en cours de construction...
+    </span>
+  </div>
 </template>
 
 <script>

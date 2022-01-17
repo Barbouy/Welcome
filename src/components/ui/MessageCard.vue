@@ -1,27 +1,27 @@
 <template>
   <div class="message-card">
-        <span class="title">
-            {{ title }}
-        </span>
-        <span class="subtitle">
-            {{ subtitle }}
-        </span>
+    <span class="title">
+      {{ title }}
+    </span>
+    <span class="subtitle">
+      {{ subtitle }}
+    </span>
   </div>
 </template>
 
 <script>
 export default {
-    name: "Error",
-    props: {
-        title: {
-            type: String,
-            required: true
-        },
-        subtitle: {
-            type: String,
-            default: null
-        }
+  name: "Error",
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    subtitle: {
+      type: String,
+      default: null
     }
+  }
 }
 </script>
 
