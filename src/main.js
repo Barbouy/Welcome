@@ -10,9 +10,7 @@ const app = createApp({})
 
 app.config.globalProperties.$axios = axios
 
-console.log(app.config)
-
-
+import "@/styles/main.scss"
 import "@/plugins/material-icons"
 
 

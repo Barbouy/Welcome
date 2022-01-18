@@ -15,12 +15,6 @@ export default {
   name: "Twitch",
   components: { MessageCard },
   data() {
-    return {
-      clientId: "udfhbi5d9rhth40svup39y9okkli6t",
-      clientSecret: "7m3xbl6vl68rga1bu9zmiy7ve9yn8z",
-      token: "7h3rlr7c6x848p2yhty55w9ogps4cg",
-      userId: "115308944"
-    }
   },
   created() {
     this.login()
@@ -31,8 +25,8 @@ export default {
     login() {
       axios.get("https://api.twitch.tv/helix/users", {
         headers: {
-          "Client-ID": this.clientId,
-          "Authorization": `Bearer ${this.token}` 
+          "Client-ID": process.env.VUE_APP_ENV_TWITCH_CLIENT_ID,
+          "Authorization": `Bearer ${process.env.VUE_APP_ENV_TWITCH_TOKEN}` 
         },
         params: { "login": "barbouyy" } 
       })
@@ -43,11 +37,11 @@ export default {
     follows() {
       axios.get("https://api.twitch.tv/helix/users/follows", {
         headers: { 
-          "Client-ID": this.clientId,
-          "Authorization": `Bearer ${this.token}` 
+          "Client-ID": process.env.VUE_APP_ENV_TWITCH_CLIENT_ID,
+          "Authorization": `Bearer ${process.env.VUE_APP_ENV_TWITCH_TOKEN}` 
         },
         params: {
-          "to_id": this.userId,
+          "to_id": process.env.VUE_APP_ENV_TWITCH_USER_ID,
           "first": 5 
         } 
       })

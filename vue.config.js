@@ -15,5 +15,6 @@ module.exports = {
         return options
       })
   },
-  pages: { index: { entry: "src/main.js" } }
+  pages: { index: { entry: "src/main.js" } },
+  css: { loaderOptions: { scss: { additionalData: "@import \"~@/styles/colors.scss\";" } } }
 }

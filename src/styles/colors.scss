@@ -1,0 +1,11 @@
+// Imported into every component with "style-resource-loader"
+
+$raisinBlack: #272838;
+$citronYellow: #F3DE8A;
+$carottePink: #EB9486;
+$lilaPurple: #7E7F9A;
+$paperWhite: #F9F8F8;
+
+@function color($name) {
+    @return map-get($colors, $name);
+  }
