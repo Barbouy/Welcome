@@ -12,6 +12,12 @@ import axios from "axios"
 
 export default {
   name: "Twitch",
+  data() {
+    return {
+      lastFollower: null,
+      userInformation: null
+    }
+  },
   created() {
     this.login()
   },
@@ -26,7 +32,7 @@ export default {
         },
         params: { "login": "barbouyy" } 
       })
-        .then(response => console.log(response.data.data[0]))
+        .then(response => this.userInformation = response.data.data[0])
         .catch(error => console.error(error))
         .finally(() => this.follows())
     },
@@ -41,7 +47,7 @@ export default {
           "first": 5 
         } 
       })
-        .then(response => console.log(response.data))
+        .then(response => this.lastFollower = response.data.data[0])
     }
   }
 }

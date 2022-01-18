@@ -57,7 +57,7 @@ module.exports = {
       "afterColon": true,
     }],
     "sort-imports": ["warn", { "ignoreCase": true, }],
-    "no-console": (process.env.NODE_ENV === "production" ? "error" : "off"),
+    "no-console": "off",
     "no-debugger": (process.env.NODE_ENV === "production" ? "error" : "off"),
 
     // https://eslint.vuejs.org/rules/no-v-html.html
