@@ -10,13 +10,12 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "welcome",
     component: Welcome,
-    children: [
-      {
-        path: "twitch",
-        name: "twitch",
-        component: Twitch
-      }
-    ]
+  },
+  {
+
+    path: "/twitch",
+    name: "twitch",
+    component: Twitch
   },
   {
     path: "/:catchAll(.*)",

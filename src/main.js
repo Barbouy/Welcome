@@ -6,12 +6,16 @@ import router from "./router"
 import store from "./store"
 import axios from "axios"
 
-const app = createApp({})
+const app = createApp(App)
 
 app.config.globalProperties.$axios = axios
 
 import "@/styles/main.scss"
-import "@/plugins/material-icons"
+import icons from "@/plugins/material-icons"
 
+app.use(icons)
+app.use(store)
+app.use(router)
 
-createApp(App).use(store).use(router).mount("#app")
+app.mount("#app")
+

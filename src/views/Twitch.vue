@@ -1,21 +1,17 @@
 <template>
   <div class="twitch">
-    <MessageCard
-      title="Twitch"
-      subtitle="Ici on twitch à fond." />
+    <div class="alert">
+      salut
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios"
-import MessageCard from "@/components/ui/MessageCard.vue"
 
 
 export default {
   name: "Twitch",
-  components: { MessageCard },
-  data() {
-  },
   created() {
     this.login()
   },
@@ -51,6 +47,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.twitch {
+  padding: 5px;
 
+  .alert {
+    max-width: 350px;
+    height: 80px;
+    background-color: $plainBlack;
+    border-radius: 15px;
+  }
+}
 </style>
