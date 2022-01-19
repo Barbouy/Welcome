@@ -1,5 +1,17 @@
 <template>
   <div class="twitch">
+    <div
+      v-if="$route.name == 'twitch'"
+      class="links">
+      <router-link
+        :to="{name: 'last-follow'}">
+        dernier follow
+      </router-link>
+      <router-link
+        :to="{name: 'follower-goal'}">
+        follower goal
+      </router-link>
+    </div>
     <router-view
       v-if="!isLoading"
       :data="twitchData" />
@@ -23,6 +35,10 @@ export default {
   },
   created() {
     this.login()
+    document.title = "Twitch"
+    setInterval(() => {
+      this.getDatas()
+    }, 5000)
   },
   methods: {
     // https://dev.twitch.tv/docs/api
@@ -42,6 +58,9 @@ export default {
           this.follows() 
           // this.subs()
         })
+    },
+    getDatas() {
+      this.follows()
     },
     follows() {
       axios.get("https://api.twitch.tv/helix/users/follows", {
@@ -81,6 +100,11 @@ export default {
 <style lang="scss" scoped>
 .twitch {
   padding: 20px 0 0 20px;
+
+  .links {
+    display: flex;
+    gap: 10px;
+  }
 
   .alert {
     max-width: 350px;

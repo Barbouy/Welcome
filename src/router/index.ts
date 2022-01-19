@@ -24,8 +24,8 @@ const routes: Array<RouteRecordRaw> = [
         component: LastFollower,
       },
       {
-        path: "total-follows",
-        name: "total-follows",
+        path: "follower-goal",
+        name: "follower-goal",
         component: FollowerGoal
       }
     ]

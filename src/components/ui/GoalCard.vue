@@ -55,7 +55,7 @@ export default {
         height: 100%;
         left: 0px;
         top: 0px;
-        background-color: rgba($grassGreen, 0.1);
+        background-color: rgba($sunYellow, 0.1);
         position: absolute;
     }
 

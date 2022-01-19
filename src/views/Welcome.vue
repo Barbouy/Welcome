@@ -17,6 +17,9 @@
 
 export default {
   name: "Welcome",
+  created() {
+    document.title = "Welcome !"
+  },
   methods: {
     goTo(route) {
       this.$router.push({ name: route })
