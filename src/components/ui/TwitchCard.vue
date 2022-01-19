@@ -45,9 +45,10 @@ export default {
 <style lang="scss" scoped>
 .twitch-card {
   .alert {
+    border: 4px solid rgba($tomatoRed, 0.5);
     max-width: 350px;
     height: 70px;
-    background-color: rgba($plainBlack, 0.85);
+    background-color: rgba(0,0,0, 0.8);
     border-radius: 20px;
     display: inline-block;
     padding: 0 20px;
@@ -76,7 +77,7 @@ export default {
       transform: rotate(-20deg);
       height: 45px;
       width: 45px;
-      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, .4));
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .8));
       animation: icon-move 6s linear infinite;
 
       &.follow {

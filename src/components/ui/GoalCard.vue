@@ -1,5 +1,6 @@
 <template>
   <div class="goal-card">
+    <pin class="goal-icon" />
     <span class="goal-text">
       {{ currentGoal.text }}
     </span>
@@ -38,24 +39,23 @@ export default {
 
 <style lang="scss" scoped>
 .goal-card {
+    border: 4px solid rgba($riverBlue, 0.5);
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
     max-width: 400px;
     height: 70px;
-    background-color: rgba($plainBlack, 0.85);
+    background-color: rgba(0,0,0, 0.8);
     border-radius: 20px;
-        overflow: hidden;
 
     .goal-status {
         transition: width ease 0.3s;
         height: 100%;
         left: 0px;
         top: 0px;
-        background-color: rgba($sunYellow, 0.1);
+        background-color: rgba($riverBlue, 0.2);
         position: absolute;
     }
 
@@ -65,17 +65,51 @@ export default {
         color: $plainWhite;
         font-size: 22px;
         line-height: 22px;
+        margin-bottom: 5px;
     }
 
     .goal-count {
         z-index: 2;
         font-weight: 500;
+        line-height: 22px;
+        font-size: 20px;
         color: $sunYellow;
-        line-height: 20px;;
 
         .total {
-            font-size: 20px;
+          font-size: 22px;
         }
     }
+
+    .goal-icon {
+      z-index: 2;
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      transform: rotate(-20deg);
+      height: 45px;
+      width: 45px;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .8));
+      animation: icon-move 6s linear infinite;
+      color: $riverBlue;
+    }
+}
+
+@keyframes icon-move {
+  0% {
+    // height: 40px;
+    // width: 40px;
+    transform: rotate(-30deg);
+  }
+
+  50% {
+    // height: 44px;
+    // width: 44px;
+    transform: rotate(-10deg);
+  }
+   100% {
+    //  height: 40px;
+    //  width: 40px;
+     transform: rotate(-30deg);
+   }
 }
 </style>
