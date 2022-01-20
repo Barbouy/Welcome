@@ -1,15 +1,17 @@
 <template>
   <div class="goal-card">
     <pin class="goal-icon" />
-    <span class="goal-text">
-      {{ currentGoal.text }}
-    </span>
-    <span class="goal-count">
-      {{ count }} / <strong class="total">{{ currentGoal.limit }}</strong>
-    </span>
-    <div
-      class="goal-status"
-      :style="{width: statusWidth}" />
+    <div class="goal">
+      <span class="goal-text">
+        {{ currentGoal.text }}
+      </span>
+      <span class="goal-count">
+        {{ count }} / <strong class="total">{{ currentGoal.limit }}</strong>
+      </span>
+      <div
+        class="goal-status"
+        :style="{width: statusWidth}" />
+    </div>
   </div>
 </template>
 
@@ -39,23 +41,29 @@ export default {
 
 <style lang="scss" scoped>
 .goal-card {
-    border: 4px solid rgba($riverBlue, 0.5);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     max-width: 400px;
     height: 70px;
-    background-color: rgba(0,0,0, 0.8);
-    border-radius: 20px;
+
+    .goal {
+      box-shadow: 0 0 10px rgba(0, 0, 0, .35);
+      background-color: rgba(0,0,0, 0.8);
+      border: 4px solid $plainWhite;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
 
     .goal-status {
         transition: width ease 0.3s;
         height: 100%;
         left: 0px;
         top: 0px;
-        background-color: rgba($riverBlue, 0.2);
+        background-color: rgba($riverBlue, 0.3);
         position: absolute;
     }
 
@@ -79,6 +87,8 @@ export default {
           font-size: 22px;
         }
     }
+    }
+
 
     .goal-icon {
       z-index: 2;
@@ -91,6 +101,9 @@ export default {
       filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .8));
       animation: icon-move 6s linear infinite;
       color: $riverBlue;
+      stroke: $plainWhite;
+      stroke-width: 3;
+      paint-order: stroke;
     }
 }
 

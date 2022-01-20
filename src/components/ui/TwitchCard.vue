@@ -1,10 +1,11 @@
 <template>
-  <div class="twitch-card">
+  <div
+    class="twitch-card" 
+    :class="type">
     <div class="alert">
       <component
         :is="icon"
-        class="alert-icon"
-        :class="type" />
+        class="alert-icon" />
       <div class="alert-content">
         <span class="alert-text">
           {{ content || " - " }}
@@ -45,7 +46,8 @@ export default {
 <style lang="scss" scoped>
 .twitch-card {
   .alert {
-    border: 4px solid rgba($tomatoRed, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .35);
+    border: 4px solid $plainWhite;
     max-width: 350px;
     height: 70px;
     background-color: rgba(0,0,0, 0.8);
@@ -78,35 +80,47 @@ export default {
       height: 45px;
       width: 45px;
       filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .8));
-      animation: icon-move 6s linear infinite;
+      animation: icon-move 8s linear infinite;
+      stroke: $plainWhite;
+      stroke-width: 3;
+      paint-order: stroke;
+    }
+  }   
 
-      &.follow {
+
+  &.follow {
+    .alert {
+      .alert-icon {
         color: $tomatoRed;
       }
+    }
+  }
 
-      &.sub {
+  &.sub {
+    .alert {
+      .alert-icon {
         color: $sunYellow;
       }
     }
-  }   
+  }
 }
 
 @keyframes icon-move {
   0% {
     // height: 40px;
     // width: 40px;
-    transform: rotate(-20deg);
+    transform: rotate(-30deg);
   }
 
   50% {
     // height: 44px;
     // width: 44px;
-    transform: rotate(10deg);
+    transform: rotate(20deg);
   }
    100% {
     //  height: 40px;
     //  width: 40px;
-     transform: rotate(-20deg);
+     transform: rotate(-30deg);
    }
 }
 </style>

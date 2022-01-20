@@ -35,7 +35,7 @@ export default {
         },
         {
           limit: 500,
-          text: "Mise en place d'un planning. 📅"
+          text: "Mise en place d'un planning 📅"
         },
         {
           limit: 1000,
