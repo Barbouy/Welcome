@@ -1,15 +1,15 @@
 <template>
-  <TwitchCard
+  <TwitchCardV2
     type="follow"
     :content="data.lastFollower.from_name" />
 </template>
 
 <script>
-import TwitchCard from "@/components/ui/TwitchCard.vue"
+import TwitchCardV2 from "@/components/ui/TwitchCardV2.vue"
 
 export default {
   name: "LastFollower",
-  components: { TwitchCard },
+  components: { TwitchCardV2 },
   props: {
     data: {
       type: Object,

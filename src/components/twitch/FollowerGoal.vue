@@ -1,17 +1,18 @@
 <template>
   <div class="follower-goal">
-    <GoalCard
+    <GoalCardV2
       :count="data.totalFollowers"
-      :goals="goals" />
+      :goals="goals"
+      type="follow" />
   </div>
 </template>
 
 <script>
-import GoalCard from "@/components/ui/GoalCard.vue"
+import GoalCardV2 from "@/components/ui/GoalCardV2.vue"
 
 export default {
   name: "FollowerGoal",
-  components: { GoalCard },
+  components: { GoalCardV2 },
   props: {
     data: {
       type: Object,
