@@ -45,12 +45,12 @@ export default {
 
 <style lang="scss" scoped>
 .twitch-card {
-  max-width: 350px;
+  max-width: 360px;
   height: 60px;
   padding: 0 20px;
-  background-color: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
-  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.92);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
 
@@ -63,11 +63,16 @@ export default {
   .content {
     color: $plainWhite;
     display: inline;
+
     .content-text {
+      display: inline-block;
       font-size: 25px;
-      line-height: 25px;
       font-family: "Arvo", sans-serif;
       font-weight: 400;
+      max-width: 270px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 

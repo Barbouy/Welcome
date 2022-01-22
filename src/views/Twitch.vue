@@ -99,7 +99,7 @@ export default {
 
 <style lang="scss" scoped>
 .twitch {
-  padding: 20px 0 0 20px;
+  padding: 20px;
 
   .links {
     display: flex;
@@ -107,7 +107,7 @@ export default {
   }
 
   .alert {
-    max-width: 350px;
+    max-width: 360px;
     height: 80px;
     background-color: rgba($plainBlack, 0.85);
     border-radius: 15px;

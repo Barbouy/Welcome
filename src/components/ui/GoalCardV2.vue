@@ -6,7 +6,7 @@
       class="content-status"
       :style="`width: ${statusWidth}`" />
     <div class="content">
-      <transition name="fade">
+      <transition name="slide-fade">
         <span
           v-if="isCountVisibile"
           class="content-count">
@@ -74,10 +74,10 @@ export default {
       this.isCountVisibile = !this.isCountVisibile
       console.log(this.isCountVisibile, this.visibleTime)
       if (this.isCountVisibile) {
-        this.visibleTime = 22000
+        this.visibleTime = 3000
         return this.startTimeout()
       }
-      this.visibleTime = 8000
+      this.visibleTime = 3000
       return this.startTimeout()
     },
     startTimeout() {
@@ -91,12 +91,12 @@ export default {
 
 <style lang="scss" scoped>
 .twitch-card {
-  width: 350px;
+  width: 360px;
   height: 60px;
   padding: 0 20px;
-  background-color: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.92);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,16 +149,16 @@ export default {
     }
 
     .content-text {
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 20px;
-        font-family: "Arvo", sans-serif;
+      font-size: 25px;
+      line-height: 25px;
+      font-family: "Arvo", sans-serif;
+      font-weight: 400;
     }
   }
 
   &.follow {
     .content-status {
-        background-color: rgba($grassGreen, 0.7);
+        background-color: rgba($grassGreen, 0.4);
     }
   }
 
@@ -169,13 +169,16 @@ export default {
   }
 }
 
-.fade-enter-active {
+.slide-fade-enter-active {
   animation: slide-enter-fade-down .5s;
 }
-.fade-leave-active {
+
+.slide-fade-leave-active {
     animation: slide-leave-fade-down .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
   opacity: 0;
 }
 
