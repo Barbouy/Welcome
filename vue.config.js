@@ -34,6 +34,7 @@ module.exports = {
               path.join(__dirname, "./src/**/*.vue"),
               path.join(__dirname, "./src/**/*.html"),
             ]),
+            whitelistPatterns: [/enter$/, /enter-to$/, /leave$/, /leave-to$/, /leave-active$/, /enter-active$/, /move$/]
           }),
         ],
       }

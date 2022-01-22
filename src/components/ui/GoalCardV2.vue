@@ -90,7 +90,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .twitch-card {
   width: 360px;
   height: 60px;
