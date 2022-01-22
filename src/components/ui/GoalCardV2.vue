@@ -6,7 +6,9 @@
       class="content-status"
       :style="`width: ${statusWidth}`" />
     <div class="content">
-      <transition name="slide-fade">
+      <transition
+        name="slide-fade"
+        mode="out-in">
         <span
           v-if="isCountVisibile"
           class="content-count">
