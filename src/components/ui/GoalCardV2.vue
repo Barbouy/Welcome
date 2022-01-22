@@ -178,21 +178,21 @@ export default {
 
 .go-away-enter-from {
     top: -50% !important;
-    opacity: 0% !important;
+    opacity: 0 !important;
 }
 .go-away-enter-to {
     top: 50% !important;
-    opacity: 100% !important;
+    opacity: 1 !important;
 }
 
 .go-away-leave-from {
     top: 50% !important;
-    opacity: 100% !important;
+    opacity: 1 !important;
 }
 
 .go-away-leave-to {
     top: 150% !important;
-    opacity: 0% !important;
+    opacity: 0 !important;
 }
 }
 
