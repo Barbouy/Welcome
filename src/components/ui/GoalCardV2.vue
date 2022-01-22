@@ -7,7 +7,7 @@
       :style="`width: ${statusWidth}`" />
     <div class="content">
       <transition
-        name="slide-fade"
+        name="go-away"
         mode="out-in">
         <span
           v-if="isCountVisibile"
@@ -168,29 +168,29 @@ export default {
     }
   }
 
-.slide-fade-enter-active {
-  transition: all 0.4s ease-out !important;
+.go-away-enter-active {
+  transition: top 0.4s, opacity 0.4s !important;
 }
 
-.slide-fade-leave-active {
-  transition: all 0.2s ease-out !important;
+.go-away-leave-active {
+  transition: top 0.2s, opacity 0.2s !important;
 }
 
-.slide-fade-enter-from {
+.go-away-enter-from {
     top: -50% !important;
     opacity: 0% !important;
 }
-.slide-fade-enter-to {
+.go-away-enter-to {
     top: 50% !important;
     opacity: 100% !important;
 }
 
-.slide-fade-leave-from {
+.go-away-leave-from {
     top: 50% !important;
     opacity: 100% !important;
 }
 
-.slide-fade-leave-to {
+.go-away-leave-to {
     top: 150% !important;
     opacity: 0% !important;
 }
