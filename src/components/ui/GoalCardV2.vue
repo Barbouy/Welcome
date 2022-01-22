@@ -166,7 +166,6 @@ export default {
         background-color: rgba($riverBlue, 0.8);
     }
   }
-}
 
 .slide-fade-enter-active {
   transition: all 0.4s ease-out;
@@ -193,6 +192,7 @@ export default {
 .slide-fade-leave-to {
     top: 150% !important;
     opacity: 0%;
+}
 }
 
 </style>
