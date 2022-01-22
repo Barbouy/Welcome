@@ -1,8 +1,8 @@
 import { 
   createRouter, createWebHistory , RouteRecordRaw
 } from "vue-router"
-import LastFollower from "@/components/twitch/LastFollower.vue"
 import FollowerGoal from "@/components/twitch/FollowerGoal.vue"
+import LastFollower from "@/components/twitch/LastFollower.vue"
 import NotFound from "@/views/NotFound.vue"
 import Twitch from "@/views/Twitch.vue"
 import Welcome from "@/views/Welcome.vue"

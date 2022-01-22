@@ -47,7 +47,7 @@ export default {
   data() {
     return { 
       isCountVisibile: false,
-      visibleTime: 10000 
+      visibleTime: 8000 
     }
   },
   computed: {
@@ -74,7 +74,6 @@ export default {
   methods: {
     updateContent() {
       this.isCountVisibile = !this.isCountVisibile
-      console.log(this.isCountVisibile, this.visibleTime)
       if (this.isCountVisibile) {
         this.visibleTime = 22000
         return this.startTimeout()
