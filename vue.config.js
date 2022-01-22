@@ -3,8 +3,6 @@
  * 
  */
 const PurgecssPlugin = require("purgecss-webpack-plugin")
-const glob = require("glob-all")
-const path = require("path")
 module.exports = {
   // ignore Stencil web components
   chainWebpack: config => {
@@ -28,14 +26,7 @@ module.exports = {
     if (process.env.NODE_ENV === "production") {
       additionalConfig = {
         plugins: [
-          new PurgecssPlugin({
-            paths: glob.sync([
-              path.join(__dirname, "./public/index.html"),
-              path.join(__dirname, "./src/**/*.vue"),
-              path.join(__dirname, "./src/**/*.html"),
-            ]),
-            whitelistPatterns: [/enter$/, /enter-to$/, /leave$/, /leave-to$/, /leave-active$/, /enter-active$/, /move$/]
-          }),
+          new PurgecssPlugin({ whitelistPatterns: [/enter$/, /enter-to$/, /leave$/, /leave-to$/, /leave-active$/, /enter-active$/, /move$/] }),
         ],
       }
     }
