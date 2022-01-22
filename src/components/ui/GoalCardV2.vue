@@ -74,10 +74,10 @@ export default {
       this.isCountVisibile = !this.isCountVisibile
       console.log(this.isCountVisibile, this.visibleTime)
       if (this.isCountVisibile) {
-        this.visibleTime = 3000
+        this.visibleTime = 22000
         return this.startTimeout()
       }
-      this.visibleTime = 3000
+      this.visibleTime = 8000
       return this.startTimeout()
     },
     startTimeout() {
@@ -119,9 +119,9 @@ export default {
     line-height: 0;
 
     .content-text, .content-count {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+      width: 100%;
+      display: flex;
+      justify-content: center;
       font-family: "Arvo", sans-serif;
       position: absolute;
       top: 50%;
@@ -133,7 +133,6 @@ export default {
     .content-count {
         font-size: 22px;
         line-height: 30px;
-        display: flex;
         align-items: center;
 
         strong {
@@ -170,39 +169,30 @@ export default {
 }
 
 .slide-fade-enter-active {
-  animation: slide-enter-fade-down .5s;
+  transition: all 0.4s ease-out;
 }
 
 .slide-fade-leave-active {
-    animation: slide-leave-fade-down .5s;
+  transition: all 0.2s ease-out;
 }
 
-.slide-fade-enter-from,
+.slide-fade-enter-from {
+    top: -50% !important;
+    opacity: 0%;
+}
+.slide-fade-enter-to {
+    top: 50% !important;
+    opacity: 100%;
+}
+
+.slide-fade-leave-from {
+    top: 50% !important;
+    opacity: 100%;
+}
+
 .slide-fade-leave-to {
-  opacity: 0;
+    top: 150% !important;
+    opacity: 0%;
 }
 
-@keyframes slide-enter-fade-down {
-    from {
-        top: -50%;
-        opacity: 0%;
-    }
-
-    to {
-        top: 50%;
-        opacity: 100%;
-    }
-}
-
-@keyframes slide-leave-fade-down {
-    from {
-        top: 50%;
-        opacity: 100%;
-    }
-
-    to {
-        top: 150%;
-        opacity: 0%;
-    }
-}
 </style>
