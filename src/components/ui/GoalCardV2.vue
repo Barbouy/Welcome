@@ -169,30 +169,30 @@ export default {
   }
 
 .slide-fade-enter-active {
-  transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out !important;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out !important;
 }
 
 .slide-fade-enter-from {
     top: -50% !important;
-    opacity: 0%;
+    opacity: 0% !important;
 }
 .slide-fade-enter-to {
     top: 50% !important;
-    opacity: 100%;
+    opacity: 100% !important;
 }
 
 .slide-fade-leave-from {
     top: 50% !important;
-    opacity: 100%;
+    opacity: 100% !important;
 }
 
 .slide-fade-leave-to {
     top: 150% !important;
-    opacity: 0%;
+    opacity: 0% !important;
 }
 }
 
